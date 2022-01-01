@@ -1,0 +1,33 @@
+# Python-for-Everbody
+Assignments solved
+Finding Numbers in a Haystack
+
+In this assignment you will read through and parse a file with text and numbers. You will extract all the numbers in the file and compute the sum of the numbers.
+Handling The Data
+The basic outline of this problem is to read the file, look for integers using the re.findall(), looking for a regular expression of '[0-9]+' and then converting the extracted strings to integers and summing up the integers.
+
+----------------------------------------------------------------------------------------------------------------------------
+Steps to make the answer
+
+Step 1- Import regular expression
+step 2- open file
+step 3: Use for loop for iterating the line of the file
+Step 4: make use of regular expression and look for the value in each line
+STep 5: There will be many extra made loops[ because that could not full fill the requirement of regular expression in the particular line ]
+Step 6: Use another loop [Nested loop] for iterating the values which was more than once in the same line
+Step 7: change the data type from string to int and append it to the list(new)
+Step 8: Use sum function to add all the value and That's it :) You got the answer !!!
+
+------------------------------------------------------------------------------------------------------------------------------
+#The_actual_code
+
+import re
+hand = open('regex_sum.txt')
+numlist=list()
+for line in hand:
+    x= re.findall('[0-9]+',line)
+    if len(x)<1:continue
+    for i in x:
+        num=int(i)
+        numlist.append(num)
+print(sum(numlist))
